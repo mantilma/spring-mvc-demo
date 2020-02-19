@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/hello")
 public class HelloWorldController {
 	
-	@RequestMapping("/showForm")
+	@RequestMapping("/showForm") //hello/showForm
 	public String showForm() {
 		return "helloworld-form";
 	}
