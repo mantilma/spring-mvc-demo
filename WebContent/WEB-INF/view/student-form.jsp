@@ -6,9 +6,22 @@
 </head>
 <body>
 	<form:form action="processForm" modelAttribute="student">
-	First name: <form:input path="firstName" />
+	First name: <form:input path="firstName" /> <!-- Spring MVC call the method in student class firstName -->
 	<br><br>
-	Last name: <form:input path="lastName" />
+	Last name: <form:input path="lastName" /> <!-- Spring MVC call the method in student class lastName -->
+	<br><br>
+	Country:
+	<form:select path="country"> <!-- Spring MVC call the method in student class setCountry -->
+		<form:option value="Brazil" label="Brazil"/>
+		<form:option value="France" label="France"/>
+		<form:option value="Germany" label="Germany"/>
+		<form:option value="India" label="India"/>
+	</form:select>
+	<br><br>
+	Country 2:
+	<form:select path="country"> 
+		<form:options items="${student.countryOptions}" />
+	</form:select>
 	<br><br>
 	<input type="submit" value ="Submit" />
 	</form:form>
